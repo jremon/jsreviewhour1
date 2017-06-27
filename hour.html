@@ -1,0 +1,34 @@
+<script>
+var HOUR;
+var MINUTE;
+var PERIOD;
+var when;
+
+function telltime(HOURx,MINUTEx,PERIODx){
+
+if(PERIODx=="AM"){
+when="morning";
+}else{
+if(HOURx<7){
+when="afternoon";
+}else{
+when="evening";
+}
+}
+
+if(MINUTEx>30){
+HOURx++;
+alert("It's almost "+HOURx+" in the "+when);
+console.log("It's almost "+HOURx+" in the "+when);
+}else{
+alert("It's just after "+HOURx+" in the "+when);
+console.log("It's just after "+HOURx+" in the "+when);
+}
+
+}
+</script>
+
+<input id="whour" value="8"><input id="wminute" value="53">
+<select id="wperiod"><option value="AM">AM</option><option value="PM">PM</option></select>
+<br>
+<input type=button id="saytime" value="Time, Please" onclick="telltime(document.getElementById('whour').value,document.getElementById('wminute').value,document.getElementById('wperiod').options[document.getElementById('wperiod').selectedIndex].value);">
